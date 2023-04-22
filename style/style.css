@@ -1,0 +1,53 @@
+body{
+    background-color: #F9DBBB;
+    margin:0;
+    padding: 0 0 100px 0;
+  }
+  
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .weather_h1{
+    padding-left: 200px;
+    font-size: 30px;
+    font-weight: 800;
+    padding-top: 100px;
+  }
+  
+  
+  .table_value{
+    text-align: center;
+    background-color:#3F497F;
+    color:#F7C04A;
+    border: 1px solid;
+    padding:10px;
+    font-size: 20px;
+    border: 5px solid black;
+    border-radius: 15px;
+    
+  }
+  .tableDiv{
+    width: 1140px;
+    background-color:rgba(255,243,226,0.5) ;
+    padding:  0px 100px 0 100px;
+    margin: 0px 80px 0px 170px;
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 10px;
+  }
+  
+  
+  td{
+    
+    background-color:#539165;
+    text-align: center;
+    color:black;
+    border: 5px solid black;
+    border-radius: 15px;
+    padding:20px 100px 20px 100px;
+    font-size: 20px;
+  }
+  
+  

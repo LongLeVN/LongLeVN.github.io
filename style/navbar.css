@@ -1,0 +1,199 @@
+.navbar{
+    height: 70px;
+  
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+  
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: #617143;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(228,228,228);
+    z-index: 100;
+  }
+  
+  
+  
+  .left-section{
+    display:flex;
+    align-items: center;
+    margin-left: 70px;
+    font-size: 30px;
+    font-weight: 900;
+    color:#BAD7E9 ;
+  }
+  
+  
+  .middle-section{
+    flex:1;
+    margin-left:70px;
+    margin-right: 30px;
+    max-width: 500px;
+    display:flex;
+    align-items: center
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  .search-voice-icon{
+    height: 24px;
+  
+    
+  }
+  
+  
+  
+  .right-section{
+    width:400px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 200px;
+    flex-shrink: 0;
+  }
+  
+  a{
+    text-decoration:none;
+    color: #89375F;
+    font-family: Inter,sans-serif;
+    font-weight: 600;
+  }
+  
+  button{
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    
+    cursor: pointer;
+    display: flex;
+    
+    font-size: 16px;
+    height: 30px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 10px 10px 20px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  button:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 34px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
+  
+  button:hover:after {
+    transform: translate(0, 0);
+  }
+  
+  button:active {
+    background-color: #ffdeda;
+    outline: 0;
+  }
+  
+  button:hover {
+    outline: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .button-56 {
+      padding: 0 40px;
+    }
+  }
+  
+  .current-user-picture{
+    height: 32px;
+    border-radius: 16px;
+  }
+  
+  .tooltip {
+    color: #000000;
+    border-bottom: solid 5px;
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 270px;
+    background-color: #F9F5EB;
+    color: #002B5B;
+    text-align: left;
+    padding: 15px ;
+    border:solid #EA5455;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  
+  .btnRain{
+    padding: 0px 10px 30px 10px;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  /* Dropdown Content (Hidden by Default) */
+  .dropTempe, .dropWindSpd, .dropBonus, .dropRain {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropTempe a, .dropWindSpd a, .dropBonus a,.dropRain a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropTempe a:hover,  .dropWindSpd a:hover,.dropBonus a:hover, .dropRain a:hover{background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropTempe, .dropdown:hover .dropWindSpd,.dropdown:hover .dropBonus,.dropdown:hover .dropRain{display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .btnTempe, .dropdown:hover .btnWindSpd, .dropdown:hover .btnBonus,.dropdown:hover .btnRain {background-color: #8be8e3;}

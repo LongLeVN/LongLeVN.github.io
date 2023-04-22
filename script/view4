@@ -1,0 +1,146 @@
+function change_rain(){
+  document.getElementById("p1").innerHTML = "Rain";
+  view5.style.display='block'
+  view5.style.color= "#89375F";
+  view5.style.fontStyle= "Inter,sans-serif";
+  view5.style.fontWeight= "600";
+  view5.style.width="60px";
+  view5.innerText="Rain"
+  method="/rain"
+  updateBonus()
+
+}
+function change_speed(){
+  document.getElementById("p1").innerHTML = "Wind Speed";
+  view5.style.display='block'
+  view5.style.color= "#89375F";
+  view5.style.fontStyle= "Inter,sans-serif";
+  view5.style.fontWeight= "600";
+  view5.style.width="120px";
+  view5.innerText="Wind Speed"
+  method="/wind_speed"
+  updateBonus()
+}
+function change_direction(){
+  document.getElementById("p1").innerHTML = "Wind Direction";
+  view5.style.display='block';
+  view5.style.color= "#89375F";
+  view5.style.fontStyle= "Inter,sans-serif";
+  view5.style.fontWeight= "600";
+  view5.style.width="140px";
+  view5.innerText="Wind Direction";
+  method="/wind_direction"
+  updateBonus()
+}
+function change_light(){
+  view5.style.display='block'
+  view5.style.color= "#89375F";
+  view5.style.fontStyle= "Inter,sans-serif";
+  view5.style.fontWeight= "600";
+  view5.style.width="70px";
+  view5.innerText="Light"
+  method="/light"
+  updateBonus()
+}
+function change_temp(){
+  document.getElementById("p1").innerHTML = "Temperature";
+  view5.style.display='block'
+  view5.style.color= "#89375F";
+  view5.style.fontStyle= "Inter,sans-serif";
+  view5.style.fontWeight= "600";
+  view5.style.width="120px";
+  view5.innerText="Temperature"
+  method="/temperature"
+  updateBonus()
+}
+function change_now(){
+  view5.style.display='block'
+  interval=""
+  updateBonus()
+}
+function change_24(){
+  view5.style.display='block'
+  interval="/23"
+  updateBonus()
+}
+function change_48(){
+  view5.style.display='block'
+  interval="/47"
+  updateBonus()
+}
+function change_week(){
+  view5.style.display='block'
+  interval="/167"
+  updateBonus()
+}
+
+function updateBonus(){
+  const content=document.getElementById("weather_tbody")
+  content.innerHTML=""
+  const date=[]
+  const data_temp=[]
+  document.getElementById("p1").innerHTML = method.slice(1);
+        fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather"+method+interval)
+        .then(response=>response.json())
+        .then(data=>{
+            const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
+            
+            sortedData.reverse()
+            
+            for(let i=0;i<sortedData.length;i++){
+                let skeleton="<tr class='row'>"
+                skeleton+="<td>"+parseInt(i+1)+"</td>"
+                skeleton+="<td>"+sortedData[i].date_time.replace("T",", ").replace("Z","").slice(0,10)+"</td>"
+                skeleton+="<td>"+sortedData[i].date_time.replace("T",", ").replace("Z","").slice(11,20)+"</td>"
+                skeleton+="<td>"+method.slice(1,)+"</td>"
+                if(method=='/rain'){
+                  skeleton+="<td>"+sortedData[i].rain+"</td>"
+                  data_temp.push(sortedData[i].rain)
+                }
+                else if(method=="/wind_speed"){
+                  skeleton+="<td>"+sortedData[i].wind_speed+"</td>"
+                  data_temp.push(sortedData[i].wind_speed)
+                }
+                else if(method=="/wind_direction"){
+                  skeleton+="<td>"+sortedData[i].wind_direction+"</td>"
+                  data_temp.push(sortedData[i].wind_direction)
+                }
+                else if(method=="/light"){
+                  skeleton+="<td>"+sortedData[i].light+"</td>"
+                  data_temp.push(sortedData[i].light)
+                }
+                else if(method=="/temperature"){
+                  skeleton+="<td>"+sortedData[i].temperature+"</td>"
+                  data_temp.push(sortedData[i].temperature)
+                }
+
+                
+                skeleton+="</tr>"
+                content.innerHTML+=skeleton
+                date.push(sortedData[i].date_time)
+                
+            }
+  
+
+            if(data_chart){
+              data_chart.destroy()
+            }
+            if(myDiv){
+              myDiv.style.display="block"
+            }
+
+            data_chart=new Chart('data_chart',{
+              type:'line',
+              data:{
+                labels: date,
+                datasets:[{
+                  data:data_temp,
+                  borderColor:'black',
+                  backgroundColor:'#7286D3',
+                  radius: 2,
+                  borderColor: ['#CE7777', '#C0EEE4'],
+                }]
+              }
+            })
+    })
+}

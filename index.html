@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Assignment</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/navbar.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+
+  <div class ="navbar">
+    <div class = "left-section">
+      Weather forecast
+    </div>
+    
+    <div class = "middle-section">
+      <div class="tooltip">My info
+        <span class="tooltiptext">Author: <strong>Long Le</strong> 
+          <br> Software Engineering student at TAMK 
+          <br> long.h.le@tuni.fi
+          <br> Weather app
+        </span>
+      </div>
+    </div>
+    
+    <div class = "right-section">
+
+      <button class="btnOverall" id="view1"><a href="#" onclick="show_weather()">Overall</a></button>
+        <div class="dropdown">
+          <button class="btnTempe" id="view2"><a href="#" onclick="show_temp()">Temperature</a></button>
+            <div class="dropTempe">
+              <a href="#" onclick="show_temp()">Now</a>
+              <a href="#" onclick="show_temp_24()">24H</a>
+              <a href="#" onclick="show_temp_48()">48H</a>
+              <a href="#" onclick="show_temp_week()">1 Week</a>
+            </div>
+        </div>
+      
+      
+        <div class="dropdown">
+          <button class="btnWindSpd" id="view3"><a href="#" onclick="show_speed()">Wind_speed</a></button>
+            <div class="dropWindSpd">
+              <a href="#" onclick="show_speed()">Now</a>
+              <a href="#" onclick="show_speed_24()">24H</a>
+              <a href="#" onclick="show_speed_48()">48H</a>
+              <a href="#" onclick="show_speed_week()">1 Week</a>
+            </div>
+        </div>
+        <div class="dropdown">
+          <button class="btnBonus" id="view4"><a href="#" onclick="change_now()">Details</a></button>
+            <div class="dropBonus">
+              <a href="#" onclick="change_now()">Now</a>
+              <a href="#" onclick="change_24()">24H</a>
+              <a href="#" onclick="change_48()">48H</a>
+              <a href="#" onclick="change_week()">1 Week</a>
+            </div>
+        </div>
+        <div class="dropdown">
+          <button class="btnRain" id="view5"><a href="#">Rain</a></button>
+            <div class="dropRain">
+              <a class = "extend" href="#" onclick="change_rain()">Rain</a>
+              <a class = "extend" href="#" onclick="change_speed()">Wind Speed</a>
+              <a class = "extend" href="#" onclick="change_direction()">Wind Direction</a>
+              <a class = "extend" href="#" onclick="change_light()">Light</a>
+              <a class = "extend" href="#" onclick="change_temp()">Temperature</a>
+            </div>
+        </div>
+      
+    </div>
+  </div> 
+
+
+  <h1 id="p1" class = "weather_h1">Weather Forecast</h1>
+
+
+
+  <div class="container">
+    <div id="myDiv" class="tableDiv">
+      <canvas id="data_chart" style="width: 700px;height:400px;"></canvas>
+    </div>
+    
+    <table class="center">
+      <thead class="head">
+          <tr class = "table_value">
+            <div class="table_column">
+              <td class = "table_value">Number</td>
+            </div>
+            <div class="table_column">
+              <td class = "table_value">Date</td>
+            </div>
+            <div class="table_column">
+              <td class = "table_value">Time</td>
+            </div>
+            <div class="table_column">
+              <td class = "table_value">Weather type</td>
+            </div>
+            <div class="table_column">
+              <td class = "table_value">Value</td>
+            </div>
+          </tr>
+      </thead>
+
+      <tbody id="weather_tbody">
+      </tbody>
+  </table>
+  </div>
+
+  <div>
+   
+  </div>
+
+
+
+
+  <script>
+    let data_chart;
+    const view5=document.getElementById("view5")
+    let method="/rain", interval="now"
+    
+    
+  </script>
+  <script src="/script/index.js"></script>
+  <script src="/script/view2.js"></script>
+  <script src="/script/view3.js"></script>
+  <script src="/script/view4.js"></script>
+</body>
+</html>
