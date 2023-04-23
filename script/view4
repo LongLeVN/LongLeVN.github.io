@@ -80,7 +80,7 @@ function updateBonus(){
   const date=[]
   const data_temp=[]
   document.getElementById("p1").innerHTML = method.slice(1);
-        fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather"+method+interval)
+        fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather"+method+interval)
         .then(response=>response.json())
         .then(data=>{
             const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));

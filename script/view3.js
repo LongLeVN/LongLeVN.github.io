@@ -5,7 +5,7 @@ function show_speed(){
     const data_speed=[]
     document.getElementById("p1").innerHTML = "Wind Speed";
     content.innerHTML=""
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
@@ -54,7 +54,7 @@ function show_speed(){
     const data_speed=[]
     document.getElementById("p1").innerHTML = "Wind Speed in 24hr";
     content.innerHTML=""
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/23")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/23")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
@@ -101,7 +101,7 @@ function show_speed(){
     const data_speed=[]
     document.getElementById("p1").innerHTML = "Wind Speed in 48hr";
     content.innerHTML=""
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/47")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/47")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
@@ -148,7 +148,7 @@ function show_speed(){
     const data_speed=[]
     document.getElementById("p1").innerHTML = "This week Wind Speed";
     content.innerHTML=""
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/167")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/wind_speed/167")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));

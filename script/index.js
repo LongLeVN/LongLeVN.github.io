@@ -4,7 +4,7 @@ function show_weather(){
     
     const content=document.getElementById("weather_tbody")
     content.innerHTML=""
-        fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather")
+        fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather")
         .then(response=>response.json())
         .then(data=>{
             const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));

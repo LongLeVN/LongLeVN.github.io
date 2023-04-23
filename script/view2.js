@@ -5,7 +5,7 @@ function show_temp(){
     const data_temp=[]
     document.getElementById("p1").innerHTML = "Temperature";
     content.innerHTML=""
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/temperature")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
@@ -55,7 +55,7 @@ function show_temp(){
     const date=[]
     const data_temp=[]
     document.getElementById("p1").innerHTML = "Temperature in 24hr";
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/23")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/23")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
@@ -105,7 +105,7 @@ function show_temp(){
     const date=[]
     const data_temp=[]
     document.getElementById("p1").innerHTML = "Temperature in 48hr";
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/47")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/47")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
@@ -154,7 +154,7 @@ function show_temp(){
     const date=[]
     const data_temp=[]
     document.getElementById("p1").innerHTML = "This week Temperature";
-          fetch("http://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/167")
+          fetch("https://webapi19sa-1.course.tamk.cloud/v1/weather/temperature/167")
           .then(response=>response.json())
           .then(data=>{
               const sortedData = data.sort((a, b) => new Date(b.date_time) - new Date(a.date_time));
